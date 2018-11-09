@@ -28,6 +28,7 @@ using System.Web.UI.WebControls;
             SqlCommand comm = new SqlCommand("SELECT AccountType FROM User WHERE Username=@username AND Password=@password ", conn);
             comm.Parameters.AddWithValue("@username", tbUsername.Text);
             comm.Parameters.AddWithValue("@password", tbPassword.Text);
+            conn.Open();
             if (Convert.ToInt16(comm.ExecuteScalar()) != 0)
             {
                 if (true)//if is admin
