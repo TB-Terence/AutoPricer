@@ -12,21 +12,29 @@
             <asp:Table runat="server">
                 <asp:TableRow>
                     <asp:TableCell>
-                        Credit Card Number:
+                        Email:
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="tbUsername" runat="server" A/>
-                    </asp:TableCell></asp:TableRow><asp:TableRow>
-                    <asp:TableCell>
-                        Expiration Date:
-                    </asp:TableCell><asp:TableCell>
-                        <asp:TextBox ID="tbPassword" runat="server"/><br />
-                    </asp:TableCell></asp:TableRow><asp:TableRow>
-                    <asp:TableCell>
-                        CVD:
-                    </asp:TableCell><asp:TableCell>
                         <asp:TextBox ID="tbEmail" runat="server"/>
-                    </asp:TableCell></asp:TableRow><asp:TableRow>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        Address:
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="tbAddress" runat="server"/>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        Phone Number:
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="tbPhone" runat="server" type="number"/>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
                     <asp:TableCell>
                         <asp:Button ID="btnBack" runat="server" Text="Back" onclick="btnBack_Click"/>
                     </asp:TableCell><asp:TableCell>
