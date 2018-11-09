@@ -28,25 +28,31 @@ using System.Web.UI.WebControls;
             SqlCommand comm = new SqlCommand("SELECT AccountType FROM User WHERE Username=@username AND Password=@password ", conn);
             comm.Parameters.AddWithValue("@username", tbUsername.Text);
             comm.Parameters.AddWithValue("@password", tbPassword.Text);
+        try
+        {
             conn.Open();
             if (Convert.ToInt16(comm.ExecuteScalar()) != 0)
             {
                 if (true)//if is admin
                     Response.Redirect("~/Admin.aspx");
+                /*
                 else//if is regular user
                 {
                     string emailConfirm = Request.QueryString["emailConfirm"];//check if we need to set the email activation
                     if (emailConfirm.Equals("true"))
                     {
-                        //emailConfirm();
+                      
                     }
                     Response.Redirect("~/User.aspx");
                 }
+                */
             }
             else
             {
                 labelWarning.Text = "Username or password incorrect!";
             }
+        }
+        catch (Exception ex) { }
 
         }
 

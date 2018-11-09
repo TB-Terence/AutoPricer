@@ -14,7 +14,7 @@ using System.Web.UI.WebControls;
         string connectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            connectionString = ConfigurationManager.ConnectionStrings["xxxxxxxx"].ToString(); // enter connections string name
+            connectionString = ConfigurationManager.ConnectionStrings["database"].ToString(); // enter connections string name
         }
         protected void btnBack_Click(object sender, EventArgs e)
         {
@@ -26,6 +26,9 @@ using System.Web.UI.WebControls;
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand comm = new SqlCommand("SELECT Username FROM User WHERE Username=@username", conn);
             comm.Parameters.AddWithValue("@username", tbUsername.Text);
+        try
+        {
+            conn.Open();
             if (Convert.ToInt16(comm.ExecuteScalar()) != 0)//if account already taken
             {
                 labelWarning.Text = "Username taken!";
@@ -49,6 +52,9 @@ using System.Web.UI.WebControls;
                     labelWarning.Text = "failed to insert to database!";
                 }
             }
+            conn.Close();
+        }
+        catch (Exception ea) { }
         }
 
         private void sendEmail()//sending a email to client to confirm account
