@@ -4,7 +4,6 @@
 
 <html>
 <head runat="server">
-    <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -13,7 +12,7 @@
         <asp:Table runat="server" Width="100%" >
                 <asp:TableRow>
                     <asp:TableCell>
-
+                        <input id="Btn_Home" type="button" value="home" onclick="btnHome_Click" />
                     </asp:TableCell>
                     <asp:TableCell>
                         <nav style="text-align:right;" ><input id="Btn_Search" type="button" value="search" onclick="btnSearch_Click" /></nav>
@@ -23,9 +22,6 @@
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
-
-        
-    
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>

@@ -9,15 +9,17 @@
             <option></option>
             <option>Profile</option>
             <option>List</option>
-            <option>Filter</option>
-        </select>
-        <select id="Select2">
-            <option></option>
             <option>About</option>
             <option>Contact</option>
         </select>
     </div>
-    <nav style="margin: 8px 8px 8px 8px">
-        <img src="" alt="" />
-    </nav>
+    <div>
+        <h1 style="text-align:center;">Auto Pricer </h1>
+        <hr>
+        <h3>hello, welcome to autopricer blah blah blah</h3>
+        <img src="banner.jpg" />
+        <hr>
+        <h3>about us xxx</h3>
+    </div>
+    
 </asp:Content>

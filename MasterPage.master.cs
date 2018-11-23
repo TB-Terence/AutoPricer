@@ -24,4 +24,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         Response.Redirect("~/Search.aspx");
     }
+    protected void btnHome_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Home.aspx");
+    }
 }
