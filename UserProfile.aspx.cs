@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Profile : System.Web.UI.Page
+public partial class UserProfile : System.Web.UI.Page
 {
     string connectionString;
     protected void Page_Load(object sender, EventArgs e)
@@ -23,10 +23,10 @@ public partial class Profile : System.Web.UI.Page
     protected void btnSave_Click(object sender, EventArgs e)
     {
         SqlConnection conn = new SqlConnection(connectionString);
-        SqlCommand comm = new SqlCommand("INSERT INTO CreditCard (CardNumber,ExpireDate,CVD) VALUES (@CardNumber,@ExpireDate,@CVD ", conn);
-        comm.Parameters.AddWithValue("@CardNumber", tbUsername.Text);
-        comm.Parameters.AddWithValue("@ExpireDate", tbPassword.Text);
-        comm.Parameters.AddWithValue("@CVD", tbPassword.Text);
+        SqlCommand comm = new SqlCommand("INSERT INTO CreditCard (CardNumber,ExpireDate,CVD) VALUES (@CardNumber,@ExpireDate,@CVD) ", conn);
+        comm.Parameters.AddWithValue("@CardNumber", tbEmail.Text);
+        comm.Parameters.AddWithValue("@ExpireDate", tbAddress.Text);
+        comm.Parameters.AddWithValue("@CVD", tbPhone.Text);
 
         try
         {

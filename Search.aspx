@@ -1,10 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Search.aspx.cs" Inherits="Search" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Search</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-        <div style="text-align:center; width:500px; background-color:#DFDFDF">
             Enter the criterias, enter the other ones blink
             <asp:Table runat="server">
                 <asp:TableRow>
@@ -58,5 +57,4 @@
             </asp:Table>
             <asp:Button ID="btnSearch" runat="server" Text="Search" onclick="btnSearch_Click"/><br/>
             <asp:Label ID="labelWarning" runat="server" Text=""/>
-        </div>
 </asp:Content>
