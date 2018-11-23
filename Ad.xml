@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements xmlns="http://schemas.microsoft.com/AspNet/AdRotator-Schedule-File">
+  <Ad>
+    <ImageUrl>~/Images/Car1G.jpg</ImageUrl>
+    <NavigateUrl>http://www.contoso-ltd.com</NavigateUrl>
+    <AlternateText>Ad for Contoso, Ltd. Web site</AlternateText>
+    <Impressions>100</Impressions>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/Car2.jpg</ImageUrl>
+    <NavigateUrl>http://www.contoso-ltd.com</NavigateUrl>
+    <AlternateText>Ad for Contoso, Ltd. Web site</AlternateText>
+    <Impressions>60</Impressions>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/Car3.jpg</ImageUrl>
+    <NavigateUrl>http://www.contoso-ltd.com</NavigateUrl>
+    <AlternateText>Ad for Contoso, Ltd. Web site</AlternateText>
+    <Impressions>60</Impressions>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/Car4Mc.jpg</ImageUrl>
+    <NavigateUrl>http://www.contoso-ltd.com</NavigateUrl>
+    <AlternateText>Ad for Contoso, Ltd. Web site</AlternateText>
+    <Impressions>50</Impressions>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/Car5.jpg</ImageUrl>
+    <NavigateUrl>http://www.contoso-ltd.com</NavigateUrl>
+    <AlternateText>Ad for Contoso, Ltd. Web site</AlternateText>
+    <Impressions>40</Impressions>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/Car6.jpg</ImageUrl>
+    <NavigateUrl>http://www.asp.net</NavigateUrl>
+    <AlternateText>Ad for ASP.NET Web site</AlternateText>
+    <Impressions>45</Impressions>
+  </Ad>
+</Advertisements>

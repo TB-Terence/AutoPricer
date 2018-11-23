@@ -3,7 +3,8 @@
     <title>HomePage</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
+    <table>
+        <td>
     <div >
         <select id="Select1">
             <option></option>
@@ -16,10 +17,14 @@
     <div>
         <h1 style="text-align:center;">Auto Pricer </h1>
         <hr>
-        <h3>hello, welcome to autopricer blah blah blah</h3>
-        <img src="banner.jpg" />
+        <h3>Hello there, welcome to autopricer where you can</h3>
         <hr>
         <h3>about us xxx</h3>
     </div>
-    
+        </td>
+        <td>
+            <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="XmlDataSource1" />
+            <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Ad.xml"></asp:XmlDataSource>
+        </td>     
+    </table>
 </asp:Content>
