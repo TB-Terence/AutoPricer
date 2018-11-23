@@ -20,7 +20,7 @@
                     <asp:Label ID="lbl_Model" runat="server" Text="Car Model:"></asp:Label>
                     </td>
                     <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="Txt_Model" runat="server"></asp:TextBox>
                     </td>
                 </tr>
 
@@ -29,7 +29,7 @@
                     <asp:Label ID="lbl_Make" runat="server" Text="Car Make"></asp:Label>
                     </td>
                     <td>
-                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="Txt_Make" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -37,7 +37,7 @@
                     <asp:Label ID="lbl_Milage" runat="server" Text="Milage"></asp:Label>
                     </td>
                     <td>
-                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="Txt_Milage" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -45,7 +45,7 @@
                     <asp:Label ID="lbl_Engine" runat="server" Text="Engine"></asp:Label>
                     </td>
                     <td>
-                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="Txt_Engine" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -53,7 +53,7 @@
                     <asp:Label ID="lbl_Condition" runat="server" Text="Condition of Car"></asp:Label>
                     </td>
                     <td>
-                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="Txt_Condition" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

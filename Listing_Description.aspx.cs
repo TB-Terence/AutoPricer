@@ -14,7 +14,20 @@ public partial class Listing_Description : System.Web.UI.Page
 
     protected void btn_submit_Click(object sender, EventArgs e)
     {
-       
+        try
+        {
+            string CarModel = Txt_Model.Text;
+            string CarMake = Txt_Make.Text;
+            string Engine = Txt_Engine.Text;
+            string Condition = Txt_Condition.Text;
+            int Milage = Convert.ToInt32(Txt_Milage.Text);
+
+
+        }
+        catch
+        {
+
+        }
     }
 
     public class Carinfo
@@ -23,6 +36,12 @@ public partial class Listing_Description : System.Web.UI.Page
         public string CarMake { get; set; }
         public string Engine { get; set; }
         public int Milage { get; set; }
+        public string Condition { get; set; }
+
+        public Carinfo(string carmodel, string carmake, string engine, int milage, string condition)
+        {
+
+        }
     }
 }
     
