@@ -11,10 +11,11 @@ using System.Web.UI.WebControls;
 
     public partial class Login : System.Web.UI.Page
     {
-        string connectionString;
-        protected void Page_Load(object sender, EventArgs e)
+
+    SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\AutoDB.mdf;Integrated Security=True");
+    protected void Page_Load(object sender, EventArgs e)
         {
-            connectionString = ConfigurationManager.ConnectionStrings["database"].ToString(); // enter connections string name
+
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
@@ -22,43 +23,48 @@ using System.Web.UI.WebControls;
             Response.Redirect("~/Register.aspx");
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-            SqlCommand comm = new SqlCommand("SELECT AccountType FROM User WHERE Username=@username AND Password=@password ", conn);
-            comm.Parameters.AddWithValue("@username", tbUsername.Text);
-            comm.Parameters.AddWithValue("@password", tbPassword.Text);
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+        SqlCommand comm = new SqlCommand("SELECT AccountType FROM [User] WHERE Username=@username AND Password=@password ", conn);
+        comm.Parameters.AddWithValue("@username", tbUsername.Text);
+        comm.Parameters.AddWithValue("@password", tbPassword.Text);
         try
         {
             conn.Open();
-            if (Convert.ToInt16(comm.ExecuteScalar()) != 0)
+            string account = "";
+
+            SqlDataReader reader = comm.ExecuteReader();
+            while (reader.Read())
             {
-                if (true)//if is admin
-                    Response.Redirect("~/Admin.aspx");
-                /*
-                else//if is regular user
-                {
-                    string emailConfirm = Request.QueryString["emailConfirm"];//check if we need to set the email activation
-                    if (emailConfirm.Equals("true"))
-                    {
-                      
-                    }
-                    Response.Redirect("~/User.aspx");
-                }
-                */
+
+                account = reader[0].ToString().Trim();
+            }
+            reader.Close();
+
+
+            if (account.Equals("admin"))
+            {
+                Response.Redirect("~/Admin.aspx");
+            }
+            else if (account.Equals("regular"))
+            {
+                Response.Redirect("~/UserProfile.aspx");
             }
             else
             {
-                labelWarning.Text = "Username or password incorrect!";
+                labelWarning.Text = "account not found";
             }
+            conn.Close();
         }
-        catch (Exception ex) { }
-
+        catch (Exception ex)
+        {
+            tbUsername.Text = "conn not working";
         }
+    }
 
         private void emailConfirm()//set the user account type to activated
         {
-            SqlConnection conn = new SqlConnection(connectionString);
+            
             SqlCommand comm = new SqlCommand("UPDATE user SET AccountType = Activated WHERE Username =@username ", conn);
             comm.Parameters.AddWithValue("@username", tbUsername.Text);
             try

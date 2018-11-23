@@ -22,7 +22,7 @@
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
-            <asp:Button ID="btnLogin" runat="server" Text="Login" onclick="btnLogin_Click"/>
+            <br/><asp:Button ID="btnLogin" runat="server" Text="Login" onclick="btnLogin_Click"/>
             <asp:Button ID="btnRegister" runat="server" Text="Register" onclick="btnRegister_Click"/><br />
             <asp:Label ID="labelWarning" runat="server" Text=""/>
 </asp:Content>
