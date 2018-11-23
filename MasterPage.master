@@ -10,19 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div style="background-color:#EFEFEF;">
-        <asp:Table runat="server" Width="100%" >
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <input id="Btn_Home" type="button" value="home" onclick="btnHome_Click" />
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <nav style="text-align:right;" ><input id="Btn_Search" type="button" value="search" onclick="btnSearch_Click" /></nav>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <nav style="text-align: right;"> <input id="Btn_Login" type="button" onclick="btnLogin_Click" value="Login"/><input id="Btn_Register" type="button"onclick="btnRegister_Click" value="Register" /></nav>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table></div>
+            <asp:SiteMapDataSource ID="siteMapSource" runat="server" />
+            <asp:Menu ID="Menu2" runat="server" DataSourceID="siteMapSource" Orientation="Horizontal" StaticDisplayLevels="2">
+                <staticmenuitemstyle horizontalpadding="30" />
+            </asp:Menu>
+        </div>
     <div style="text-align:center; width:300px; background-color:#DFDFDF;">
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
