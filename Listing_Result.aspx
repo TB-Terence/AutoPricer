@@ -1,15 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Listing_Result.aspx.cs" Inherits="Listing_Result" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Listing_Result.aspx.cs" Inherits="Listing_Result" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <title>Listing Results</title>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:DataList ID="DataList1" runat="server" DataKeyField="ListingID" DataSourceID="SqlDataSource1" OnItemCommand="DataList1_ItemCommand">
+            <asp:DataList ID="DataList1" runat="server" DataKeyField="ListingID" DataSourceID="SqlDataSource1" OnItemCommand="DataList1_ItemCommand" BackColor="Black" Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="White">
                 <EditItemTemplate>
                     ListingID:
                     <asp:Label ID="ListingIDLabel" runat="server" Text='<%# Eval("ListingID") %>' />
@@ -48,7 +44,4 @@
                 </ItemTemplate>
             </asp:DataList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Listing]"></asp:SqlDataSource>
-        </div>
-    </form>
-</body>
-</html>
+</asp:Content>

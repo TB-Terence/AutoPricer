@@ -47,7 +47,7 @@ using System.Web.UI.WebControls;
                     sendEmail();
                     Response.Redirect("~/EmailConfirmation.aspx");
                 }
-                catch (SqlException ex)
+                catch (Exception ex)
                 {
                     labelWarning.Text = "failed to insert to database!";
                 }
