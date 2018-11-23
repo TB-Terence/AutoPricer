@@ -1,13 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Search.aspx.cs" Inherits="Search" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <title>Search</title>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
         <div style="text-align:center; width:500px; background-color:#DFDFDF">
             Enter the criterias, enter the other ones blink
             <asp:Table runat="server">
@@ -63,6 +59,4 @@
             <asp:Button ID="btnSearch" runat="server" Text="Search" onclick="btnSearch_Click"/><br/>
             <asp:Label ID="labelWarning" runat="server" Text=""/>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

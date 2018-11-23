@@ -1,13 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Profile.aspx.cs" Inherits="Profile" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <title>Profile</title>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server" >
         <div style="text-align:center; width:300px; background-color:#DFDFDF">
             <asp:Table runat="server">
                 <asp:TableRow>
@@ -42,8 +37,4 @@
                     </asp:TableCell></asp:TableRow>
 
             </asp:Table>
-            </form>
-
-</body>
-
-</html>
+          </asp:Content>
