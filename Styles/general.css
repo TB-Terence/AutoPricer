@@ -1,0 +1,151 @@
+﻿body {
+    width: 800px;
+    margin: auto;
+    display: block;
+}
+/* nav */
+#navBar {
+    background-color: #B5C7DE;
+    position: relative;
+    width: 100%;
+    border-radius: 0px 0px 5px 5px;
+}
+#navBar div{
+    padding: 5px;
+    line-height: 25px;
+}
+
+#menuBar{
+    position: relative;
+    display: inline-block;
+    float: left;
+}
+
+#loginBar{
+    position: relative;
+    display: inline-block;
+    float: right;
+}
+/*
+ul.nav > ul {
+    list-style: none;
+    float: left;
+    border: 1px solid red;
+    position: relative;
+    height: 24px; /* height included for IE 7 
+}
+
+ul.nav ul {
+    left: -10000px;
+    position: absolute;
+}
+
+ul.nav > li:hover ul {
+    left: 0;
+    top: 24px; /* IE7 has problems without this 
+}
+*/
+
+
+#banner {
+    height: 200px;
+	box-shadow: 0 0 5px rgba(33, 33, 33, 0.5);
+}
+
+#banner h1{
+    line-height: 200px;
+}
+
+#searchBar{
+    position: relative;
+    top: 50%;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+}
+
+#nav {
+    margin: 5px 0px 5px 0px;
+}
+.light-menu{
+    background-color: #507cd1;
+}
+.dark-menu{
+    background-color: lightgray;
+}
+.level1 {
+    width: 150px;
+    line-height: 20px;
+    text-align: center;
+}
+/* content */
+#content {
+    position: relative;
+    clear: both;
+    display: block;
+    padding: 20px 0px 20px 0px;
+}
+
+#buttons{
+    border-top: 1px solid #507CD1;
+    padding: 10px;
+    position: relative;
+}
+#buttons div{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+}
+#buttons div div{
+    position: relative;
+    left: -50%;
+}
+#infoBox {
+    color: green;
+    font-weight: bold;
+    line-height: 30px;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+#errorBox {
+    color: red;
+    font-weight: bold;
+    line-height: 30px;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+#navBar #tools{
+    float: right;
+    padding: 0px;
+}
+/* footer */
+#footer {
+    position: absolute;
+    width: 800px;
+}
+
+#footer span {
+    margin-top: 20px;
+    padding: 5px 0px 5px 0px;
+    display: block;
+    text-align: center;
+    background: #B5C7DE;
+    color: #284E98;
+}
+
+#bookList a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+#bookList tr:first-child a{
+    color: white;
+}
+
+/* error message */

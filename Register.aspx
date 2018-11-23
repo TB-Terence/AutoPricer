@@ -1,13 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Register" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-     <form id="form1" runat="server">
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Register" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link type="text/css" rel="stylesheet" href="../Styles/login.css" />
+    <title>Register</title>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">
+    <div>
         <div style="text-align:center; width:300px; background-color:#DFDFDF">
             <asp:Table runat="server">
                 <asp:TableRow>
@@ -52,10 +49,8 @@
                 </asp:TableRow>
             </asp:Table>
 
-            <asp:Button ID="btnBack" runat="server" Text="Back" onclick="btnBack_Click"/>
             <asp:Button ID="btnRegister" runat="server" Text="Register" onclick="btnRegister_Click"/><br />
             <asp:Label ID="labelWarning" runat="server" Text=""/>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>
