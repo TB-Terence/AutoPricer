@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:Table runat="server" Width="100%" >
+                <asp:TableRow>
+                    <asp:TableCell>
+
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <nav style="text-align:right;" ><input id="Btn_Search" type="button" value="search" onclick="btnSearch_Click" /></nav>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <nav style="text-align: right;"> <input id="Btn_Login" type="button" onclick="btnLogin_Click" value="Login"/><input id="Btn_Register" type="button"onclick="btnRegister_Click" value="Register" /></nav>
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+
+        
+    
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
