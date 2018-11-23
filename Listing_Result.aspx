@@ -43,7 +43,7 @@
                     ListingStatus:
                     <asp:Label ID="ListingStatusLabel" runat="server" Text='<%# Eval("ListingStatus") %>' />
                     <br />
-                    <asp:Button ID="Button1" runat="server" Text="Edit" CommandName="Edit" OnClientClick="True" />
+                    <asp:Button ID="Button0" runat="server" Text="Edit" CommandName="Edit"/>
 <br />
                 </ItemTemplate>
             </asp:DataList>
