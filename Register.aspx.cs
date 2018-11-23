@@ -38,12 +38,7 @@ using System.Web.UI.WebControls;
 
             if (user.Equals(""))//if account already taken
             {
-                SqlCommand comm2 = new SqlCommand("INSERT INTO [User](Username,Password,Email,Address,PhoneNumber,AccountType) values(@username, @password, @email, @address, @phone,\"unactivated\")", conn);
-                comm.Parameters.AddWithValue("@username", tbUsername.Text);
-                comm.Parameters.AddWithValue("@password", tbPassword.Text);
-                comm.Parameters.AddWithValue("@email", tbEmail.Text);
-                comm.Parameters.AddWithValue("@address", tbAddress.Text);
-                comm.Parameters.AddWithValue("@phone", tbPhone.Text);
+                SqlCommand comm2 = new SqlCommand(@"INSERT INTO [User](Username,Password,Email,Address,PhoneNumber,AccountType) Values('" + tbUsername.Text + "', '" + tbPassword.Text + "', '" + tbEmail.Text + "', '" + tbAddress.Text + "', '"+ tbPhone.Text + "'," + "'unconfirmed')", conn);
                 try
                 {
                     comm2.ExecuteNonQuery();
@@ -52,7 +47,7 @@ using System.Web.UI.WebControls;
                 }
                 catch (Exception ex)
                 {
-                    labelWarning.Text = "failed to insert to database!";
+                    labelWarning.Text = ex.Message + "failed to insert to database!";
                 }
             }
             else
