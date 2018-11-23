@@ -23,8 +23,8 @@
     </div>
         </td>
         <td>
-            <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="XmlDataSource1" OnAdCreated="AdRotator1_AdCreated" />
-            <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Ad.xml"></asp:XmlDataSource>
+            <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="XmlDataSource1"/>
+            <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Ad.xml" ></asp:XmlDataSource>
         </td>     
     </table>
 </asp:Content>
