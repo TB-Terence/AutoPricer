@@ -11,10 +11,10 @@ using System.Web.UI.WebControls;
 
     public partial class Register : System.Web.UI.Page
     {
-        string connectionString;
-        protected void Page_Load(object sender, EventArgs e)
+    SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\AutoDB.mdf;Integrated Security=True");
+    protected void Page_Load(object sender, EventArgs e)
         {
-            connectionString = ConfigurationManager.ConnectionStrings["database"].ToString(); // enter connections string name
+
         }
         protected void btnBack_Click(object sender, EventArgs e)
         {
@@ -23,19 +23,22 @@ using System.Web.UI.WebControls;
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(connectionString);
-            SqlCommand comm = new SqlCommand("SELECT Username FROM User WHERE Username=@username", conn);
+            SqlCommand comm = new SqlCommand("SELECT Username FROM [User] WHERE Username=@username", conn);
             comm.Parameters.AddWithValue("@username", tbUsername.Text);
         try
         {
             conn.Open();
-            if (Convert.ToInt16(comm.ExecuteScalar()) != 0)//if account already taken
+            string user = "";
+            SqlDataReader reader = comm.ExecuteReader();
+            while (reader.Read())
             {
-                labelWarning.Text = "Username taken!";
+                user = reader[0].ToString().Trim();
             }
-            else //insert into database and send email
+            reader.Close();
+
+            if (user.Equals(""))//if account already taken
             {
-                SqlCommand comm2 = new SqlCommand("INSERT INTO user(Username,Password,Email,Address,PhoneNumber,AccountType) values(@username, @password, @email, @address, @phone,Unactivated)", conn);
+                SqlCommand comm2 = new SqlCommand("INSERT INTO [User](Username,Password,Email,Address,PhoneNumber,AccountType) values(@username, @password, @email, @address, @phone,\"unactivated\")", conn);
                 comm.Parameters.AddWithValue("@username", tbUsername.Text);
                 comm.Parameters.AddWithValue("@password", tbPassword.Text);
                 comm.Parameters.AddWithValue("@email", tbEmail.Text);
@@ -44,13 +47,17 @@ using System.Web.UI.WebControls;
                 try
                 {
                     comm2.ExecuteNonQuery();
-                    sendEmail();
+                    //sendEmail();
                     Response.Redirect("~/EmailConfirmation.aspx");
                 }
                 catch (Exception ex)
                 {
                     labelWarning.Text = "failed to insert to database!";
                 }
+            }
+            else
+            {
+                labelWarning.Text = "Username taken!";
             }
             conn.Close();
         }
