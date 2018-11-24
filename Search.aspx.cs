@@ -20,7 +20,7 @@ using System.Web.UI.WebControls;
 
         private string selectStatement()
         {
-            statement = "SELECT * FROM Car ";
+            statement = "SELECT * FROM [Car] ";
             //if there is a where condition
             if (tbModel.Text != null || tbMake.Text != null || tbMilageMin.Text != null || tbMilageMax.Text != null || tbAgeMin.Text != null || tbAgeMax.Text != null || tbEngine.Text != null || tbCondition.Text != null )
             {

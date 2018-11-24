@@ -42,7 +42,7 @@ using System.Web.UI.WebControls;
                 try
                 {
                     comm2.ExecuteNonQuery();
-                    //sendEmail();
+                    sendEmail();
                     Response.Redirect("~/EmailConfirmation.aspx");
                 }
                 catch (Exception ex)
@@ -61,6 +61,8 @@ using System.Web.UI.WebControls;
 
         private void sendEmail()//sending a email to client to confirm account
         {
+        /*
+        
             SmtpClient client = new SmtpClient();
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.EnableSsl = true;
@@ -89,5 +91,42 @@ using System.Web.UI.WebControls;
             {
                 labelWarning.Text = "failed to send email!";
             }
+            */
+
+
+        SmtpClient client = new SmtpClient();
+        client.DeliveryMethod = SmtpDeliveryMethod.Network;
+        client.EnableSsl = true;
+        client.Host = "smtp.gmail.com";
+        client.Port = 587;
+
+        // setup Smtp authentication
+        System.Net.NetworkCredential credentials =
+            new System.Net.NetworkCredential("TeamNKproject@gmail.com", "teamnk1!");
+        client.UseDefaultCredentials = false;
+        client.Credentials = credentials;
+        client.EnableSsl = true;
+
+        MailMessage msg = new MailMessage();
+        msg.From = new MailAddress("TeamNKproject@gmail.com");
+        msg.To.Add(new MailAddress(tbEmail.Text));
+
+        msg.Subject = "This is a test Email subject";
+        msg.IsBodyHtml = true;
+        msg.Body = string.Format("<html><head></head><body>do not reply</body>");
+
+        /*string.Format("<html><head></head><body>Please click on the following link to confirm your account<br/>" +
+            "If you did not create an account with us, please ignore this email<br/>" +
+            "<a href=\"~/Login.aspx?emailConfirm=true\">click here and login</body>");*/
+
+        try
+        {
+            client.Send(msg);
         }
+        catch (Exception ex)
+        {
+
+        }
+
+    }
     }

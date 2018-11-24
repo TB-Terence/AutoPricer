@@ -141,4 +141,11 @@ public partial class UserList : System.Web.UI.Page
 
         Response.Redirect("UserDetails.aspx?user=" + username);
     }
+
+    protected void usersGrid_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        // Obtain the index of the selected row
+
+    }
+
 }

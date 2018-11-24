@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:GridView id="carsGrid" runat="server" AllowPaging="True" AllowSorting="True" OnPageIndexChanging="carsGrid_PageIndexChanging" OnSorting="carsGrid_Sorting" AutoGenerateColumns="False" OnSelectedIndexChanged="carsGrid_SelectedIndexChanged">
+        <asp:GridView id="carsGrid" runat="server" AllowPaging="True" AllowSorting="True" OnSorting="carsGrid_Sorting" AutoGenerateColumns="False" OnSelectedIndexChanged="carsGrid_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="Model" HeaderText="Model" SortExpression="Model" />
                 <asp:BoundField DataField="Make" HeaderText="Make" SortExpression="Make" />

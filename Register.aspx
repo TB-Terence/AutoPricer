@@ -18,7 +18,7 @@
                         Password:
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="tbPassword" runat="server"/><br />
+                        <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"/><br />
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
