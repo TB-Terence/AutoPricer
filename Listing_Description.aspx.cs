@@ -16,32 +16,38 @@ public partial class Listing_Description : System.Web.UI.Page
     {
         try
         {
+            
             string CarModel = Txt_Model.Text;
             string CarMake = Txt_Make.Text;
             string Engine = Txt_Engine.Text;
             string Condition = Txt_Condition.Text;
-            int Milage = Convert.ToInt32(Txt_Milage.Text);
+            string Milage = Txt_Milage.Text;
 
-
+            Carinfo infoBin = new Carinfo(CarModel, CarMake, Milage, Engine, Condition);
+            ConnectionClass.AddCarInfo(infoBin);
+            lbl_Confirm.Text = "Entry Success";
         }
-        catch
+        catch(Exception EX)
         {
+            lbl_Confirm.Text = "Entry Failed" + EX.Message;
 
         }
     }
 
-    public class Carinfo
-    {
-        public string CarModel { get; set; }
-        public string CarMake { get; set; }
-        public string Engine { get; set; }
-        public int Milage { get; set; }
-        public string Condition { get; set; }
+    //public class CInfo
+    //{
+    //    public int carID { get; set; }
+    //    public int garageID { get; set; }
+    //    public string CarModel { get; set; }
+    //    public string CarMake { get; set; }
+    //    public string Engine { get; set; }
+    //    public int Milage { get; set; }
+    //    public string Condition { get; set; }
 
-        public Carinfo(string carmodel, string carmake, string engine, int milage, string condition)
-        {
+    //    public CInfo(string carmodel, string carmake, int milage, string engine, string condition)
+    //    {
 
-        }
-    }
+    //    }
+    //}
 }
     

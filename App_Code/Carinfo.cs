@@ -16,8 +16,19 @@ public class Carinfo
     public string engine { get; set; }
     public string condition { get; set; }
 
-    public Carinfo(int carID, int garageID, string model, string make, string milage, string engine, string condition)
+    public Carinfo(string model, string make, string milage, string engine, string condition)
     {
-
+        Random l = new Random();
+        this.carID = l.Next(9999);
+        this.garageID = l.Next(9999);
+        this.model = model;
+        this.make = make;
+        this.milage = milage;
+        this.engine = engine;
+        this.condition = condition;
     }
+    //public Carinfo(int carID, int garageID, string model, string make, string milage, string engine, string condition)
+    //{
+
+    //}
 }

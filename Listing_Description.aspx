@@ -59,6 +59,8 @@
                 <tr>
                     <td>
 
+                        <asp:Label ID="lbl_Confirm" runat="server" Text=""></asp:Label>
+
                     </td>
                     <td>
                         <asp:Button ID="btn_submit" runat="server" Text="Submit" OnClick="btn_submit_Click" />
