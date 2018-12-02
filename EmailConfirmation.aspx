@@ -4,5 +4,5 @@
     <title>Email Confirm</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server" >
-            Email sent, please click on the link in the email to confirm your account
+            your email have been confirmed
 </asp:Content>
