@@ -44,10 +44,14 @@ using System.Web.UI.WebControls;
 
             if (account.Equals("admin"))
             {
+                System.Web.HttpContext.Current.Session["user"] = tbUsername.Text;
+                System.Web.HttpContext.Current.Session["accountType"] = "admin";
                 Response.Redirect("~/Admin.aspx");
             }
             else if (account.Equals("regular"))
             {
+                System.Web.HttpContext.Current.Session["user"] = tbUsername.Text;
+                System.Web.HttpContext.Current.Session["accountType"] = "regular";
                 Response.Redirect("~/UserProfile.aspx");
             }
             else

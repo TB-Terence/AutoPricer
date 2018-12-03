@@ -4,5 +4,5 @@
     <title>Email Confirm</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server" >
-            your email have been confirmed
+            your email have been confirmed. Account registered.
 </asp:Content>

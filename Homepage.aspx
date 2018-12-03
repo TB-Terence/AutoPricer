@@ -6,7 +6,7 @@
     <table>
         <td>
     <div >
-        <select id="Select1">
+        <select id="Select1" runat="server" onselect="goToPages">
             <option></option>
             <option>Profile</option>
             <option>List</option>
